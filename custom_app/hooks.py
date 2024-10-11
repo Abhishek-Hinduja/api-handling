@@ -145,6 +145,12 @@ app_license = "mit"
 # 	}
 # }
 
+# doc_events = {
+#     "*": {
+#         "on_submit": "custom_app.api.trigger_background_job"
+#     }
+# }
+
 # Scheduled Tasks
 # ---------------
 
@@ -174,8 +180,22 @@ app_license = "mit"
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "custom_app.event.get_events"
+override_whitelisted_methods = {
+	"custom_app.custom_app.hi.get_name_of_the_usersssss": "custom_app.custom_app.hi.get_name_of_the_user",
+	"custom_app.custom_app.get_user.get_users": "custom_app.custom_app.get_user.get_users",
+	"custom_app.custom_app.get_user.create_user": "custom_app.custom_app.get_user.create_user",
+	"custom_app.custom_app.get_user.create_product": "custom_app.custom_app.get_user.create_product",
+	# "custom_app.custom_app.get_user.get_items":"custom_app.custom_app.get_user.get_items"
+}
+
+fixtures = [
+    {"dt": "DocType", "filters": [["name", "in", ["Employee"]]]}
+]
+
+# doc_events = {
+#     "*": {
+#         "on_update": "custom_app.custom_app.get_user.create_user",
+#     }
 # }
 #
 # each overriding function accepts a `data` argument;
